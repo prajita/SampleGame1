@@ -14,17 +14,17 @@ class App extends Component {
     utils.callFirstAPI((data) => { this.setState({ showInput: true }) });
   }
   async showInput() {
-    console.log("calling input API");
-    utils.callInputAPI((data) => {
-      console.log("Input of the game is here:::" + JSON.stringify(data));
-      console.log("count of the input::"+data.length);
-      utils.callOutputAPI(data.length,(data)=>console.log(data));
-    }
-    );
-    // let data1 = await utils.callInputAPI();
-    // console.log("Input of the game is here:::" + JSON.stringify(data1));
-    // console.log("count of the input::" + data1.length);
-    // let dataOut = await utils.callOutputAPI(data1.length, (data) => console.log(data));
+    // console.log("calling input API");
+    // utils.callInputAPI((data) => {
+    //   console.log("Input of the game is here:::" + JSON.stringify(data));
+    //   console.log("count of the input::"+data.length);
+    //   utils.callOutputAPI(data.length,(data)=>console.log(data));
+    // }
+    // );
+    let data1 = await utils.callInputAPI();
+    console.log("Input of the game is here:::" + JSON.stringify(data1));
+    console.log("count of the input::" + data1.length);
+    let dataOut = await utils.callOutputAPI(data1.length, (data) => console.log(data));
 
   }
   render() {
