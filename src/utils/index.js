@@ -10,7 +10,6 @@ export const callFirstAPI = async() => {
             'userId': constants.userId
         }
     };
-    //await apiResolver.getAPIResponse(apiURLSuffix, options, (data) => { console.log(data); callback(data); });
     return new Promise((resolve,reject)=>{
         apiResolver.getAPIResponse(apiURLSuffix, options, (data) => { console.log(data); resolve(data); });
     })
@@ -23,7 +22,6 @@ export const callInputAPI = async () => {
             'userId': constants.userId
         }
     };
-   // await apiResolver.getAPIResponse(apiURLSuffix, options, (data) => { console.log(data); callback(data); });
    return new Promise((resolve,reject)=>{
     apiResolver.getAPIResponse(apiURLSuffix, options, (data) => { console.log(data); resolve(data); });
 })
@@ -40,7 +38,6 @@ export const callOutputAPI = async(apiInput) => {
         },
         body: JSON.stringify(apiInput)
     };
-   //await apiResolver.getAPIResponse(apiURLSuffix, options, (data) => { console.log(data); callback(data); });
    return new Promise((resolve,reject)=>{
     apiResolver.getAPIResponse(apiURLSuffix, options, (data) => { console.log(data); resolve(data); });
 })
